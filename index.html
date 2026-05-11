@@ -1,0 +1,1724 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFE Open Day 2026</title>
+    <link rel="stylesheet" href="styles/main.css">
+
+    <style>
+        .homepage-video-section {
+            width: 100%;
+            padding: 90px 0;
+            background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+        }
+
+        :root[data-theme=dark] .homepage-video-section {
+            background: linear-gradient(180deg, #050816 0%, #0f172a 100%);
+        }
+
+        .video-content {
+            max-width: 850px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .video-content .section-label {
+            display: inline-block;
+            margin-bottom: 14px;
+            font-size: 0.82rem;
+            font-weight: 800;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #1f4fa3;
+        }
+
+        .video-content h2 {
+            font-size: clamp(2rem, 4vw, 3.3rem);
+            line-height: 1.15;
+            margin-bottom: 18px;
+            color: #101828;
+        }
+
+        .video-content p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #475467;
+        }
+
+        :root[data-theme=dark] .video-content h2 {
+            color: #ffffff;
+        }
+
+        :root[data-theme=dark] .video-content p {
+            color: rgba(255, 255, 255, 0.78);
+        }
+
+        :root[data-theme=dark] .video-content .section-label {
+            color: #c9a24a;
+        }
+
+        .local-video-wrapper {
+            width: 100vw;
+            height: 75vh;
+            max-width: none;
+            margin-left: calc(50% - 50vw);
+            margin-right: calc(50% - 50vw);
+            overflow: hidden;
+            background: #000;
+            position: relative;
+        }
+
+        .local-video-wrapper video {
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        .hero-actions.centered {
+            margin-top: 34px;
+        }
+
+        .home-intro-section {
+            padding: 96px 0;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(12, 91, 168, .12), transparent 30%),
+                radial-gradient(circle at 85% 80%, rgba(227, 6, 19, .10), transparent 28%),
+                linear-gradient(180deg, var(--bg), var(--soft));
+            border-bottom: 1px solid var(--line);
+        }
+
+        .home-intro-grid {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 46px;
+            align-items: center;
+        }
+
+        .intro-panel {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 34px;
+            padding: 34px;
+            box-shadow: var(--shadow);
+        }
+
+        .intro-panel p {
+            color: var(--muted);
+            margin-top: 18px;
+        }
+
+        .intro-bento {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .bento-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 26px;
+            padding: 24px;
+            box-shadow: 0 14px 40px rgba(0, 18, 71, .055);
+            transition: .25s;
+            min-height: 190px;
+        }
+
+        .bento-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .bento-card.large {
+            grid-column: span 2;
+            background: linear-gradient(135deg, var(--navy), var(--blue));
+            color: #fff;
+        }
+
+        .bento-card.large h3,
+        .bento-card.large p {
+            color: #fff;
+        }
+
+        .bento-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            background: rgba(12, 91, 168, .10);
+            color: var(--blue);
+            display: grid;
+            place-items: center;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+
+        .bento-card.large .bento-icon {
+            background: rgba(255, 255, 255, .14);
+            color: #fff;
+        }
+
+        .bento-card p {
+            color: var(--muted);
+            margin-top: 10px;
+            font-size: .96rem;
+        }
+
+        .open-day-calendar-section {
+            padding: 96px 0;
+            background:
+                radial-gradient(circle at top left, rgba(12, 91, 168, .13), transparent 34%),
+                radial-gradient(circle at bottom right, rgba(227, 6, 19, .10), transparent 34%),
+                linear-gradient(180deg, var(--bg), var(--soft));
+            border-bottom: 1px solid var(--line);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .open-day-calendar-section::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(12, 91, 168, .055) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(12, 91, 168, .055) 1px, transparent 1px);
+            background-size: 42px 42px;
+            opacity: .55;
+            pointer-events: none;
+        }
+
+        .calendar-layout {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .calendar-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 34px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            max-width: 430px;
+            margin: 0 auto;
+        }
+
+        .calendar-top {
+            background: linear-gradient(135deg, var(--navy), var(--blue));
+            color: #fff;
+            padding: 22px 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .calendar-top strong {
+            font-size: 1.15rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .calendar-top span {
+            font-weight: 900;
+            opacity: .85;
+        }
+
+        .calendar-body {
+            padding: 28px;
+        }
+
+        .calendar-weekdays,
+        .calendar-days {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px;
+            text-align: center;
+        }
+
+        .calendar-weekdays span {
+            font-size: .75rem;
+            font-weight: 900;
+            color: var(--muted);
+            text-transform: uppercase;
+        }
+
+        .calendar-days {
+            margin-top: 14px;
+        }
+
+        .calendar-days span {
+            height: 42px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            font-weight: 850;
+            color: var(--text);
+            background: rgba(12, 91, 168, .045);
+            border: 1px solid transparent;
+        }
+
+        .calendar-days span.muted-day {
+            color: rgba(83, 97, 116, .35);
+            background: transparent;
+        }
+
+        .calendar-days span.event-day {
+            background: var(--red);
+            color: #fff;
+            box-shadow: 0 14px 34px rgba(227, 6, 19, .32);
+            transform: scale(1.08);
+            position: relative;
+        }
+
+        .calendar-days span.event-day::after {
+            content: "";
+            position: absolute;
+            bottom: 6px;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: #fff;
+        }
+
+        .calendar-note {
+            margin-top: 22px;
+            padding: 18px;
+            border-radius: 22px;
+            background: var(--soft);
+            border: 1px solid var(--line);
+        }
+
+        .calendar-note strong {
+            display: block;
+            color: var(--red);
+            font-weight: 900;
+            margin-bottom: 4px;
+        }
+
+        .calendar-note span {
+            color: var(--muted);
+            font-weight: 700;
+        }
+
+        .calendar-info-panel {
+            position: relative;
+            z-index: 2;
+        }
+
+        .calendar-info-panel .lead {
+            margin-top: 18px;
+        }
+
+        .calendar-details-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 34px;
+        }
+
+        .calendar-detail {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            padding: 22px;
+            box-shadow: 0 14px 40px rgba(0, 18, 71, .05);
+        }
+
+        .calendar-detail span {
+            display: inline-block;
+            color: var(--red);
+            font-weight: 900;
+            letter-spacing: .14em;
+            font-size: .75rem;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .calendar-detail strong {
+            display: block;
+            font-size: 1.12rem;
+            color: var(--text);
+            line-height: 1.25;
+        }
+
+        .calendar-detail p {
+            color: var(--muted);
+            margin-top: 6px;
+            line-height: 1.55;
+        }
+
+        .calendar-actions {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            margin-top: 34px;
+        }
+
+        .home-experience-map {
+            padding: 98px 0;
+            background: var(--bg);
+        }
+
+        .experience-map-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 42px;
+        }
+
+        .map-card {
+            position: relative;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 28px;
+            padding: 28px;
+            overflow: hidden;
+            min-height: 260px;
+            box-shadow: 0 14px 40px rgba(0, 18, 71, .055);
+            transition: .25s;
+        }
+
+        .map-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow);
+        }
+
+        .map-card::before {
+            content: "";
+            position: absolute;
+            width: 120px;
+            height: 120px;
+            right: -40px;
+            top: -40px;
+            border-radius: 50%;
+            background: rgba(12, 91, 168, .08);
+        }
+
+        .map-card:nth-child(even)::before {
+            background: rgba(227, 6, 19, .08);
+        }
+
+        .map-step {
+            color: var(--red);
+            font-weight: 900;
+            letter-spacing: .16em;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .map-card p {
+            color: var(--muted);
+            margin-top: 12px;
+        }
+
+        .home-campus-section {
+            padding: 98px 0;
+            background: var(--soft);
+        }
+
+        .campus-showcase {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 46px;
+            align-items: center;
+        }
+
+        .campus-photo-stack {
+            position: relative;
+            min-height: 430px;
+        }
+
+        .campus-photo {
+            position: absolute;
+            overflow: hidden;
+            border-radius: 30px;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
+            background: var(--card);
+        }
+
+        .campus-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .campus-photo.main {
+            inset: 0 80px 70px 0;
+        }
+
+        .campus-photo.second {
+            right: 0;
+            bottom: 0;
+            width: 52%;
+            height: 48%;
+            border: 8px solid var(--soft);
+        }
+
+        .campus-points {
+            display: grid;
+            gap: 14px;
+            margin-top: 28px;
+        }
+
+        .campus-point {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 22px;
+            padding: 18px;
+        }
+
+        .campus-point span {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--blue);
+            color: #fff;
+            font-weight: 900;
+            flex-shrink: 0;
+        }
+
+        .campus-point p {
+            color: var(--muted);
+            margin-top: 3px;
+        }
+
+        .home-choose-section {
+            padding: 98px 0;
+            background:
+                linear-gradient(135deg, rgba(0, 18, 71, .96), rgba(12, 91, 168, .88)),
+                url('visuals/campus-render.jpg') center/cover no-repeat;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .home-choose-section h2,
+        .home-choose-section p {
+            color: #fff;
+        }
+
+        .choose-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 42px;
+        }
+
+        .choose-card {
+            background: rgba(255, 255, 255, .10);
+            border: 1px solid rgba(255, 255, 255, .18);
+            border-radius: 28px;
+            padding: 28px;
+            backdrop-filter: blur(14px);
+            min-height: 220px;
+            transition: .25s;
+        }
+
+        .choose-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, .14);
+        }
+
+        .choose-card strong {
+            display: block;
+            font-size: 2rem;
+            line-height: 1;
+            margin-bottom: 18px;
+            color: #fff;
+        }
+
+        .choose-card h3,
+        .choose-card p {
+            color: #fff;
+        }
+
+        .choose-card p {
+            opacity: .84;
+            margin-top: 10px;
+        }
+
+        .home-cta-band {
+            padding: 84px 0;
+            background: var(--bg);
+        }
+
+        .cta-band-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 36px;
+            padding: 42px;
+            box-shadow: var(--shadow);
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            gap: 36px;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .cta-band-card::after {
+            content: "";
+            position: absolute;
+            right: -90px;
+            top: -90px;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: rgba(227, 6, 19, .10);
+        }
+
+        .cta-actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 14px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+
+        .site-footer-upgraded {
+            background: linear-gradient(135deg, #001247, #061027);
+            color: #fff;
+            padding: 62px 0 24px;
+        }
+
+        .site-footer-upgraded .logo-img {
+            width: 90px;
+            height: 90px;
+        }
+
+        .footer-upgraded-grid {
+            display: grid;
+            grid-template-columns: 1.1fr .75fr .9fr;
+            gap: 42px;
+            align-items: start;
+        }
+
+        .footer-brand-text {
+            color: rgba(255, 255, 255, .72);
+            max-width: 430px;
+            margin-top: 14px;
+        }
+
+        .footer-upgraded-grid h3 {
+            color: #fff;
+            margin-bottom: 16px;
+        }
+
+        .footer-upgraded-links {
+            display: grid;
+            gap: 10px;
+        }
+
+        .footer-upgraded-links a {
+            color: rgba(255, 255, 255, .74);
+            font-weight: 800;
+            transition: .2s;
+        }
+
+        .footer-upgraded-links a:hover {
+            color: #fff;
+            transform: translateX(4px);
+        }
+
+        .footer-contact-list {
+            display: grid;
+            gap: 12px;
+            color: rgba(255, 255, 255, .74);
+            font-weight: 700;
+        }
+
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            width: fit-content;
+            margin-top: 18px;
+            padding: 12px 16px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .10);
+            border: 1px solid rgba(255, 255, 255, .18);
+            color: #fff;
+            font-weight: 900;
+            transition: .25s;
+        }
+
+        .instagram-link:hover {
+            background: var(--red);
+            transform: translateY(-2px);
+        }
+
+        .instagram-link svg {
+            width: 21px;
+            height: 21px;
+        }
+
+        .footer-bottom {
+            margin-top: 44px;
+            padding-top: 22px;
+            border-top: 1px solid rgba(255, 255, 255, .14);
+            display: flex;
+            justify-content: space-between;
+            gap: 18px;
+            flex-wrap: wrap;
+            color: rgba(255, 255, 255, .62);
+            font-size: .92rem;
+        }
+
+        @media (max-width: 1000px) {
+            .home-intro-grid,
+            .calendar-layout,
+            .campus-showcase,
+            .cta-band-card,
+            .footer-upgraded-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .calendar-info-panel {
+                text-align: center;
+            }
+
+            .calendar-info-panel .lead {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .calendar-actions {
+                justify-content: center;
+            }
+
+            .experience-map-grid,
+            .choose-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .cta-actions {
+                justify-content: flex-start;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .homepage-video-section {
+                padding: 70px 0;
+            }
+
+            .video-content {
+                padding: 0 16px;
+            }
+
+            .local-video-wrapper {
+                height: 55vh;
+            }
+
+            .intro-bento,
+            .calendar-details-grid,
+            .experience-map-grid,
+            .choose-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bento-card.large {
+                grid-column: span 1;
+            }
+
+            .calendar-card {
+                max-width: 100%;
+            }
+
+            .campus-photo-stack {
+                min-height: 330px;
+            }
+
+            .campus-photo.main {
+                inset: 0;
+            }
+
+            .campus-photo.second {
+                display: none;
+            }
+
+            .cta-band-card {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .calendar-body {
+                padding: 20px;
+            }
+
+            .calendar-days span {
+                height: 36px;
+                border-radius: 11px;
+                font-size: .9rem;
+            }
+        }
+    
+
+        /* OPEN DAY PHOTOS ADDED ONLY */
+        .open-day-photo-strip,
+        .open-day-photo-band {
+            padding: 42px 0;
+            background: var(--bg);
+        }
+
+        .open-day-photo-band {
+            padding-top: 0;
+        }
+
+        .photo-mosaic {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+        }
+
+        .photo-tile {
+            position: relative;
+            min-height: 260px;
+            border-radius: 26px;
+            overflow: hidden;
+            background: var(--card);
+            border: 1px solid var(--line);
+            box-shadow: 0 18px 48px rgba(0, 18, 71, .10);
+        }
+
+        .photo-tile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .35s ease;
+        }
+
+        .photo-tile:hover img {
+            transform: scale(1.045);
+        }
+
+        .photo-tile.large {
+            grid-column: span 7;
+            min-height: 430px;
+        }
+
+        .photo-tile.medium {
+            grid-column: span 5;
+            min-height: 430px;
+        }
+
+        .photo-tile.small {
+            grid-column: span 4;
+            min-height: 280px;
+        }
+
+        .photo-tile.wide {
+            grid-column: span 8;
+            min-height: 330px;
+        }
+
+        .photo-tile.narrow {
+            grid-column: span 4;
+            min-height: 330px;
+        }
+
+        @media (max-width: 900px) {
+            .photo-mosaic {
+                grid-template-columns: 1fr;
+            }
+
+            .photo-tile,
+            .photo-tile.large,
+            .photo-tile.medium,
+            .photo-tile.small,
+            .photo-tile.wide,
+            .photo-tile.narrow {
+                grid-column: span 1;
+                min-height: 280px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="tricolor-bar"></div>
+
+    <nav class="nav" id="mainNav">
+        <div class="container nav-inner">
+            <a href="index.html" class="nav-logo">
+                <img class="logo-img" src="visuals/UFE_Logo_Blue.png" alt="UFE Logo">
+                <span class="logo-sub" data-i18n="openDay">Open Day 2026</span>
+            </a>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="index.html" data-i18n="home">Home</a>
+                <a href="pages/majors.html" data-i18n="experience">Experience</a>
+                <a href="pages/schedule.html" data-i18n="schedule">Schedule</a>
+                <a href="pages/campus3d.html" data-i18n="campus">Campus 3D</a>
+                <a href="pages/about.html" data-i18n="about">About</a>
+
+                <div class="dropdown">
+                    <button class="menu-btn" type="button">
+                        <span data-i18n="menu">More</span> ▼
+                    </button>
+
+                    <div class="dropdown-panel">
+                        <a href="pages/accessibility.html" data-i18n="accessibility">Accessibility</a>
+                        <a href="pages/quiz.html" data-i18n="quiz">Quiz</a>
+                        <a href="pages/admin.html">Admin</a>
+                        <button id="accessToggle" type="button" data-i18n="access">Accessibility Tools</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="nav-actions">
+                <a href="pages/register.html" class="nav-cta" data-i18n="register">Register</a>
+
+                <div class="nav-controls">
+                    <div class="lang-switcher">
+                        <button data-lang="en">EN</button>
+                        <button data-lang="fr">FR</button>
+                        <button data-lang="ar">AR</button>
+                    </div>
+
+                    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Dark mode"></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="home-hero" id="main">
+        <div class="container">
+            <div class="hero-centered">
+                <span class="eyebrow t"
+                    data-en="UFE Open Day 2026"
+                    data-fr="Open Day UFE 2026"
+                    data-ar="اليوم المفتوح UFE 2026">
+                    UFE Open Day 2026
+                </span>
+
+                <h1 class="t"
+                    data-en="Step Into UFE Before You Choose Your Future"
+                    data-fr="Entrez dans l’univers UFE avant de choisir votre avenir"
+                    data-ar="ادخل عالم UFE قبل أن تختار مستقبلك">
+                    Step Into UFE Before You Choose Your Future
+                </h1>
+
+                <p class="lead t"
+                    data-en="A complete open day experience designed to help future students explore the campus, understand academic paths, meet the atmosphere, and take the next step with confidence."
+                    data-fr="Une expérience Open Day complète pour découvrir le campus, comprendre les parcours académiques, ressentir l’ambiance et avancer avec confiance."
+                    data-ar="تجربة يوم مفتوح متكاملة تساعد الطلاب على استكشاف الحرم، وفهم المسارات الأكاديمية، والشعور بالأجواء، واتخاذ الخطوة التالية بثقة.">
+                    A complete open day experience designed to help future students explore the campus, understand academic paths, meet the atmosphere, and take the next step with confidence.
+                </p>
+
+                <div class="hero-actions centered">
+                    <a class="btn btn-primary t"
+                        href="pages/register.html"
+                        data-en="Register Now"
+                        data-fr="S’inscrire"
+                        data-ar="سجل الآن">
+                        Register Now
+                    </a>
+
+                    <a class="btn btn-light t"
+                        href="pages/schedule.html"
+                        data-en="View the Schedule"
+                        data-fr="Voir le programme"
+                        data-ar="عرض الجدول">
+                        View the Schedule
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="home-intro-section">
+            <div class="container home-intro-grid">
+                <div class="intro-panel">
+                    <span class="eyebrow t"
+                        data-en="The Idea"
+                        data-fr="L’idée"
+                        data-ar="الفكرة">
+                        The Idea
+                    </span>
+
+                    <h2 class="t"
+                        data-en="Not just a visit. A preview of student life."
+                        data-fr="Pas seulement une visite. Un aperçu de la vie étudiante."
+                        data-ar="ليست مجرد زيارة. إنها معاينة للحياة الجامعية.">
+                        Not just a visit. A preview of student life.
+                    </h2>
+
+                    <p class="lead t"
+                        data-en="The homepage now focuses on the visitor journey: what they will feel, discover, explore, and do next. Each section has a clear role, so the page feels cleaner and more useful."
+                        data-fr="La page d’accueil se concentre sur le parcours du visiteur : ce qu’il va ressentir, découvrir, explorer et faire ensuite. Chaque section a un rôle clair."
+                        data-ar="تركز الصفحة الرئيسية الآن على رحلة الزائر: ما سيشعر به، وما سيكتشفه، وما سيستكشفه، وما الخطوة التالية. كل قسم له دور واضح.">
+                        The homepage now focuses on the visitor journey: what they will feel, discover, explore, and do next. Each section has a clear role, so the page feels cleaner and more useful.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary t"
+                            href="pages/majors.html"
+                            data-en="Explore the Experience"
+                            data-fr="Explorer l’expérience"
+                            data-ar="استكشف التجربة">
+                            Explore the Experience
+                        </a>
+                    </div>
+                </div>
+
+                <div class="intro-bento">
+                    <article class="bento-card large">
+                        <div class="bento-icon">01</div>
+                        <h3 class="t"
+                            data-en="Discover the campus atmosphere"
+                            data-fr="Découvrir l’ambiance du campus"
+                            data-ar="اكتشف أجواء الحرم">
+                            Discover the campus atmosphere
+                        </h3>
+                        <p class="t"
+                            data-en="Visitors get a real sense of the environment before deciding where they want to study."
+                            data-fr="Les visiteurs ressentent l’environnement avant de choisir leur futur lieu d’études."
+                            data-ar="يحصل الزوار على إحساس حقيقي بالبيئة قبل اختيار مكان الدراسة.">
+                            Visitors get a real sense of the environment before deciding where they want to study.
+                        </p>
+                    </article>
+
+                    <article class="bento-card">
+                        <div class="bento-icon">02</div>
+                        <h3 class="t"
+                            data-en="Meet academic paths"
+                            data-fr="Comprendre les parcours"
+                            data-ar="تعرف على المسارات">
+                            Meet academic paths
+                        </h3>
+                        <p class="t"
+                            data-en="Each visitor can connect their interests to possible UFE majors."
+                            data-fr="Chaque visiteur relie ses intérêts aux spécialités possibles."
+                            data-ar="يربط كل زائر اهتماماته بالتخصصات المناسبة.">
+                            Each visitor can connect their interests to possible UFE majors.
+                        </p>
+                    </article>
+
+                    <article class="bento-card">
+                        <div class="bento-icon">03</div>
+                        <h3 class="t"
+                            data-en="Plan the next step"
+                            data-fr="Préparer la suite"
+                            data-ar="خطط للخطوة التالية">
+                            Plan the next step
+                        </h3>
+                        <p class="t"
+                            data-en="Registration, schedule, and support pages make action simple."
+                            data-fr="Inscription, programme et support rendent l’action simple."
+                            data-ar="التسجيل والجدول والدعم يجعلون الخطوة التالية أسهل.">
+                            Registration, schedule, and support pages make action simple.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="open-day-calendar-section" id="calendar">
+            <div class="container calendar-layout">
+                <div class="calendar-card">
+                    <div class="calendar-top">
+                        <strong class="t"
+                            data-en="September"
+                            data-fr="Septembre"
+                            data-ar="سبتمبر">
+                            September
+                        </strong>
+
+                        <span>2026</span>
+                    </div>
+
+                    <div class="calendar-body">
+                        <div class="calendar-weekdays">
+                            <span>Sun</span>
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span>Sat</span>
+                        </div>
+
+                        <div class="calendar-days">
+                            <span class="muted-day">30</span>
+                            <span class="muted-day">31</span>
+                            <span class="event-day">1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                            <span>7</span>
+                            <span>8</span>
+                            <span>9</span>
+                            <span>10</span>
+                            <span>11</span>
+                            <span>12</span>
+                            <span>13</span>
+                            <span>14</span>
+                            <span>15</span>
+                            <span>16</span>
+                            <span>17</span>
+                            <span>18</span>
+                            <span>19</span>
+                            <span>20</span>
+                            <span>21</span>
+                            <span>22</span>
+                            <span>23</span>
+                            <span>24</span>
+                            <span>25</span>
+                            <span>26</span>
+                            <span>27</span>
+                            <span>28</span>
+                            <span>29</span>
+                            <span>30</span>
+                            <span class="muted-day">1</span>
+                            <span class="muted-day">2</span>
+                            <span class="muted-day">3</span>
+                        </div>
+
+                        <div class="calendar-note">
+                            <strong class="t"
+                                data-en="Open Day Highlight"
+                                data-fr="Moment clé de l’Open Day"
+                                data-ar="موعد اليوم المفتوح">
+                                Open Day Highlight
+                            </strong>
+
+                            <span class="t"
+                                data-en="September 1 • 6:00 PM"
+                                data-fr="1 septembre • 18h00"
+                                data-ar="1 سبتمبر • 6 مساءً">
+                                September 1 • 6:00 PM
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="calendar-info-panel">
+                    <span class="eyebrow t"
+                        data-en="Save the Date"
+                        data-fr="Réservez la date"
+                        data-ar="احفظ الموعد">
+                        Save the Date
+                    </span>
+
+                    <h2 class="t"
+                        data-en="Your Open Day journey starts here."
+                        data-fr="Votre parcours Open Day commence ici."
+                        data-ar="رحلتك في اليوم المفتوح تبدأ هنا.">
+                        Your Open Day journey starts here.
+                    </h2>
+
+                    <p class="lead t"
+                        data-en="Join UFE Open Day 2026 for a guided visit built around discovery, academic direction, campus exploration, accessibility support, and clear registration steps."
+                        data-fr="Rejoignez l’Open Day UFE 2026 pour une visite guidée autour de la découverte, de l’orientation académique, de l’exploration du campus, de l’accessibilité et de l’inscription."
+                        data-ar="انضم إلى اليوم المفتوح لجامعة UFE 2026 في زيارة موجهة تشمل الاكتشاف، والتوجيه الأكاديمي، واستكشاف الحرم، ودعم الإتاحة، وخطوات التسجيل الواضحة.">
+                        Join UFE Open Day 2026 for a guided visit built around discovery, academic direction, campus exploration, accessibility support, and clear registration steps.
+                    </p>
+
+                    <div class="calendar-details-grid">
+                        <div class="calendar-detail">
+                            <span class="t"
+                                data-en="Date"
+                                data-fr="Date"
+                                data-ar="التاريخ">
+                                Date
+                            </span>
+
+                            <strong class="t"
+                                data-en="Tuesday, September 1"
+                                data-fr="Mardi 1 septembre"
+                                data-ar="الثلاثاء، 1 سبتمبر">
+                                Tuesday, September 1
+                            </strong>
+
+                            <p class="t"
+                                data-en="The highlighted day in the calendar marks the official Open Day experience."
+                                data-fr="Le jour marqué dans le calendrier indique l’expérience officielle Open Day."
+                                data-ar="اليوم المحدد في التقويم هو موعد تجربة اليوم المفتوح الرسمية.">
+                                The highlighted day in the calendar marks the official Open Day experience.
+                            </p>
+                        </div>
+
+                        <div class="calendar-detail">
+                            <span class="t"
+                                data-en="Time"
+                                data-fr="Heure"
+                                data-ar="الوقت">
+                                Time
+                            </span>
+
+                            <strong class="t"
+                                data-en="6:00 PM"
+                                data-fr="18h00"
+                                data-ar="6 مساءً">
+                                6:00 PM
+                            </strong>
+
+                            <p class="t"
+                                data-en="The visit is structured as an evening experience with clear stages."
+                                data-fr="La visite est organisée comme une expérience en soirée avec des étapes claires."
+                                data-ar="تم تنظيم الزيارة كتجربة مسائية بمراحل واضحة.">
+                                The visit is structured as an evening experience with clear stages.
+                            </p>
+                        </div>
+
+                        <div class="calendar-detail">
+                            <span class="t"
+                                data-en="Experience"
+                                data-fr="Expérience"
+                                data-ar="التجربة">
+                                Experience
+                            </span>
+
+                            <strong class="t"
+                                data-en="Guided Open Day Route"
+                                data-fr="Parcours guidé Open Day"
+                                data-ar="مسار موجه لليوم المفتوح">
+                                Guided Open Day Route
+                            </strong>
+
+                            <p class="t"
+                                data-en="Visitors move from welcome to activities, 3D campus discovery, and registration guidance."
+                                data-fr="Les visiteurs passent de l’accueil aux activités, à la découverte 3D du campus et à l’orientation d’inscription."
+                                data-ar="ينتقل الزوار من الاستقبال إلى الأنشطة، ثم استكشاف الحرم ثلاثي الأبعاد، ثم إرشاد التسجيل.">
+                                Visitors move from welcome to activities, 3D campus discovery, and registration guidance.
+                            </p>
+                        </div>
+
+                        <div class="calendar-detail">
+                            <span class="t"
+                                data-en="Full Schedule"
+                                data-fr="Programme complet"
+                                data-ar="الجدول الكامل">
+                                Full Schedule
+                            </span>
+
+                            <strong class="t"
+                                data-en="View the event route"
+                                data-fr="Voir le parcours"
+                                data-ar="عرض مسار الفعالية">
+                                View the event route
+                            </strong>
+
+                            <p class="t"
+                                data-en="Open the full schedule page to see every step of the Open Day journey."
+                                data-fr="Ouvrez la page programme pour voir toutes les étapes de l’Open Day."
+                                data-ar="افتح صفحة الجدول لرؤية كل خطوات رحلة اليوم المفتوح.">
+                                Open the full schedule page to see every step of the Open Day journey.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="calendar-actions">
+                        <a class="btn btn-primary t"
+                            href="pages/register.html"
+                            data-en="Register Now"
+                            data-fr="S’inscrire"
+                            data-ar="سجل الآن">
+                            Register Now
+                        </a>
+
+                        <a class="btn btn-secondary t"
+                            href="pages/schedule.html"
+                            data-en="View Full Schedule"
+                            data-fr="Voir le programme"
+                            data-ar="عرض الجدول الكامل">
+                            View Full Schedule
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="homepage-video-section" id="video">
+            <div class="video-content">
+                <span class="section-label t"
+                    data-en="Featured Video"
+                    data-fr="Vidéo principale"
+                    data-ar="الفيديو الرئيسي">
+                    Featured Video
+                </span>
+
+                <h2 class="t"
+                    data-en="Watch the Open Day Experience"
+                    data-fr="Découvrez l’expérience Open Day"
+                    data-ar="شاهد تجربة اليوم المفتوح">
+                    Watch the Open Day Experience
+                </h2>
+
+                <p class="t"
+                    data-en="This video gives visitors a clearer idea of the Open Day experience, the atmosphere, and what they can expect before attending."
+                    data-fr="Cette vidéo donne aux visiteurs une idée plus claire de l’expérience Open Day, de l’ambiance et de ce qu’ils peuvent attendre avant leur visite."
+                    data-ar="يعطي هذا الفيديو للزوار فكرة أوضح عن تجربة اليوم المفتوح والأجواء وما يمكنهم توقعه قبل الحضور.">
+                    This video gives visitors a clearer idea of the Open Day experience, the atmosphere, and what they can expect before attending.
+                </p>
+            </div>
+
+            <div class="local-video-wrapper">
+                <video autoplay muted loop playsinline preload="auto">
+                    <source src="visuals/ufevideo.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <section class="open-day-photo-strip" aria-label="Open Day photo moments">
+            <div class="container photo-mosaic">
+                <div class="photo-tile large"><img src="visuals/open-day-photo-01.png" alt="UFE Open Day campus lobby"></div>
+                <div class="photo-tile medium"><img src="visuals/open-day-photo-02.png" alt="Students and visitors speaking during UFE Open Day"></div>
+                <div class="photo-tile small"><img src="visuals/open-day-photo-03.png" alt="UFE Open Day auditorium session"></div>
+                <div class="photo-tile small"><img src="visuals/open-day-photo-04.png" alt="Open Day activity stand"></div>
+                <div class="photo-tile small"><img src="visuals/open-day-photo-05.png" alt="UFE Open Day welcome sign"></div>
+            </div>
+        </section>
+
+        <section class="home-experience-map">
+            <div class="container center">
+                <span class="eyebrow t"
+                    data-en="How the Day Flows"
+                    data-fr="Déroulement de la journée"
+                    data-ar="كيف تسير التجربة">
+                    How the Day Flows
+                </span>
+
+                <h2 class="t"
+                    data-en="A clear path from curiosity to confidence."
+                    data-fr="Un chemin clair de la curiosité à la confiance."
+                    data-ar="مسار واضح من الفضول إلى الثقة.">
+                    A clear path from curiosity to confidence.
+                </h2>
+
+                <p class="lead" style="margin:18px auto 0;">
+                    <span class="t"
+                        data-en="The experience is designed as a guided route, not random sections. Every stop helps visitors understand UFE better."
+                        data-fr="L’expérience est conçue comme un parcours guidé, pas comme des parties séparées. Chaque étape aide à mieux comprendre UFE."
+                        data-ar="تم تصميم التجربة كمسار موجه وليس كأقسام عشوائية. كل محطة تساعد الزائر على فهم UFE بشكل أفضل.">
+                        The experience is designed as a guided route, not random sections. Every stop helps visitors understand UFE better.
+                    </span>
+                </p>
+
+                <div class="experience-map-grid">
+                    <article class="map-card">
+                        <span class="map-step">01</span>
+                        <h3 class="t"
+                            data-en="Arrive & feel the place"
+                            data-fr="Arriver et ressentir le lieu"
+                            data-ar="الوصول والشعور بالمكان">
+                            Arrive & feel the place
+                        </h3>
+                        <p class="t"
+                            data-en="The first impression matters. Visitors begin with the campus atmosphere, guidance, and a welcoming route."
+                            data-fr="La première impression compte. Les visiteurs commencent par l’ambiance, l’orientation et un accueil clair."
+                            data-ar="الانطباع الأول مهم. تبدأ التجربة بالأجواء والإرشاد ومسار ترحيبي واضح.">
+                            The first impression matters. Visitors begin with the campus atmosphere, guidance, and a welcoming route.
+                        </p>
+                    </article>
+
+                    <article class="map-card">
+                        <span class="map-step">02</span>
+                        <h3 class="t"
+                            data-en="Explore academic choices"
+                            data-fr="Explorer les choix académiques"
+                            data-ar="استكشاف الاختيارات الأكاديمية">
+                            Explore academic choices
+                        </h3>
+                        <p class="t"
+                            data-en="Visitors discover majors, study paths, and what each academic direction could mean for their future."
+                            data-fr="Les visiteurs découvrent les spécialités, les parcours et ce que chaque direction peut représenter."
+                            data-ar="يتعرف الزوار على التخصصات والمسارات وما يمكن أن يعنيه كل اتجاه لمستقبلهم.">
+                            Visitors discover majors, study paths, and what each academic direction could mean for their future.
+                        </p>
+                    </article>
+
+                    <article class="map-card">
+                        <span class="map-step">03</span>
+                        <h3 class="t"
+                            data-en="Preview the future campus"
+                            data-fr="Prévisualiser le futur campus"
+                            data-ar="معاينة الحرم المستقبلي">
+                            Preview the future campus
+                        </h3>
+                        <p class="t"
+                            data-en="The 3D campus experience helps visitors imagine the future learning environment in a visual way."
+                            data-fr="L’expérience 3D aide les visiteurs à imaginer le futur environnement d’apprentissage."
+                            data-ar="تساعد تجربة 3D الزوار على تخيل بيئة التعلم المستقبلية بصريًا.">
+                            The 3D campus experience helps visitors imagine the future learning environment in a visual way.
+                        </p>
+                    </article>
+
+                    <article class="map-card">
+                        <span class="map-step">04</span>
+                        <h3 class="t"
+                            data-en="Register with clarity"
+                            data-fr="S’inscrire avec clarté"
+                            data-ar="التسجيل بوضوح">
+                            Register with clarity
+                        </h3>
+                        <p class="t"
+                            data-en="The final step is simple: understand the schedule, ask questions, and complete registration."
+                            data-fr="La dernière étape est simple : comprendre le programme, poser des questions et s’inscrire."
+                            data-ar="الخطوة الأخيرة بسيطة: فهم الجدول، طرح الأسئلة، وإتمام التسجيل.">
+                            The final step is simple: understand the schedule, ask questions, and complete registration.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="open-day-photo-band" aria-label="More Open Day moments">
+            <div class="container photo-mosaic">
+                <div class="photo-tile wide"><img src="visuals/open-day-photo-06.png" alt="Open Day food and activity booth"></div>
+                <div class="photo-tile narrow"><img src="visuals/open-day-photo-08.jpg" alt="UFE student ambassadors at Open Day"></div>
+                <div class="photo-tile small"><img src="visuals/open-day-photo-09.jpg" alt="Open Day registration support"></div>
+                <div class="photo-tile small"><img src="visuals/open-day-photo-10.jpg" alt="Auditorium presentation during Open Day"></div>
+                <div class="photo-tile small"><img src="visuals/open-day-photo-11.jpg" alt="University team on stage"></div>
+            </div>
+        </section>
+
+        <section class="home-campus-section">
+            <div class="container campus-showcase">
+                <div class="campus-photo-stack">
+                    <div class="campus-photo main">
+                        <img src="visuals/about-hero.png" alt="UFE campus interior">
+                    </div>
+
+                    <div class="campus-photo second">
+                        <img src="visuals/campus-render.jpg" alt="Future UFE campus render">
+                    </div>
+                </div>
+
+                <div>
+                    <span class="eyebrow t"
+                        data-en="Campus Story"
+                        data-fr="Histoire du campus"
+                        data-ar="قصة الحرم">
+                        Campus Story
+                    </span>
+
+                    <h2 class="t"
+                        data-en="From today’s campus to tomorrow’s vision."
+                        data-fr="Du campus actuel à la vision de demain."
+                        data-ar="من الحرم الحالي إلى رؤية المستقبل.">
+                        From today’s campus to tomorrow’s vision.
+                    </h2>
+
+                    <p class="lead t"
+                        data-en="The homepage connects the current UFE environment with the future campus vision, giving visitors a stronger reason to explore, ask, and imagine themselves as part of the university."
+                        data-fr="La page relie l’environnement actuel d’UFE à la vision du futur campus, pour aider les visiteurs à se projeter dans l’université."
+                        data-ar="تربط الصفحة بين بيئة UFE الحالية ورؤية الحرم المستقبلي، مما يساعد الزوار على تخيل أنفسهم كجزء من الجامعة.">
+                        The homepage connects the current UFE environment with the future campus vision, giving visitors a stronger reason to explore, ask, and imagine themselves as part of the university.
+                    </p>
+
+                    <div class="campus-points">
+                        <div class="campus-point">
+                            <span>1</span>
+                            <div>
+                                <h3 class="t"
+                                    data-en="Real campus atmosphere"
+                                    data-fr="Ambiance réelle"
+                                    data-ar="أجواء حقيقية">
+                                    Real campus atmosphere
+                                </h3>
+                                <p class="t"
+                                    data-en="Photos and video make the experience feel grounded and believable."
+                                    data-fr="Les photos et la vidéo rendent l’expérience plus réelle."
+                                    data-ar="الصور والفيديو تجعل التجربة واقعية ومقنعة.">
+                                    Photos and video make the experience feel grounded and believable.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="campus-point">
+                            <span>2</span>
+                            <div>
+                                <h3 class="t"
+                                    data-en="Future-focused exploration"
+                                    data-fr="Exploration tournée vers l’avenir"
+                                    data-ar="استكشاف موجه للمستقبل">
+                                    Future-focused exploration
+                                </h3>
+                                <p class="t"
+                                    data-en="The 3D model adds excitement and shows the university’s development vision."
+                                    data-fr="Le modèle 3D ajoute de l’intérêt et montre la vision de développement."
+                                    data-ar="يضيف نموذج 3D الحماس ويعرض رؤية التطوير.">
+                                    The 3D model adds excitement and shows the university’s development vision.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-actions">
+                        <a class="btn btn-primary t"
+                            href="pages/campus3d.html"
+                            data-en="Open Campus 3D"
+                            data-fr="Ouvrir le Campus 3D"
+                            data-ar="افتح الحرم 3D">
+                            Open Campus 3D
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="open-day-photo-band" aria-label="Open Day activity photos">
+            <div class="container photo-mosaic">
+                <div class="photo-tile small"><img src="visuals/open-day-photo-12.jpg" alt="Digital marketing booth at UFE Open Day"></div>
+                <div class="photo-tile small"><img src="visuals/open-day-photo-13.jpg" alt="Students gathering at activity booth"></div>
+                <div class="photo-tile small"><img src="visuals/open-day-photo-14.jpg" alt="Taste of France activity area"></div>
+                <div class="photo-tile wide"><img src="visuals/open-day-photo-07.jpg" alt="UFE Open Day decorated campus space"></div>
+            </div>
+        </section>
+
+        <section class="home-choose-section">
+            <div class="container center">
+                <span class="eyebrow t"
+                    data-en="Why this Website Works"
+                    data-fr="Pourquoi ce site fonctionne"
+                    data-ar="لماذا هذا الموقع مناسب">
+                    Why this Website Works
+                </span>
+
+                <h2 class="t"
+                    data-en="Built like a student decision journey."
+                    data-fr="Construit comme un parcours de décision étudiant."
+                    data-ar="مصمم كرحلة قرار للطالب.">
+                    Built like a student decision journey.
+                </h2>
+
+                <p class="lead" style="margin:18px auto 0;">
+                    <span class="t"
+                        data-en="The site does not just display information. It guides the visitor from interest to action."
+                        data-fr="Le site ne se contente pas d’afficher des informations. Il guide le visiteur de l’intérêt à l’action."
+                        data-ar="الموقع لا يعرض المعلومات فقط. بل يقود الزائر من الاهتمام إلى اتخاذ خطوة.">
+                        The site does not just display information. It guides the visitor from interest to action.
+                    </span>
+                </p>
+
+                <div class="choose-grid">
+                    <article class="choose-card">
+                        <strong>01</strong>
+                        <h3 class="t"
+                            data-en="Clear navigation"
+                            data-fr="Navigation claire"
+                            data-ar="تنقل واضح">
+                            Clear navigation
+                        </h3>
+                        <p class="t"
+                            data-en="Every page has a simple role: home, experience, schedule, campus, about, and registration."
+                            data-fr="Chaque page a un rôle simple : accueil, expérience, programme, campus, à propos et inscription."
+                            data-ar="كل صفحة لها دور بسيط: الرئيسية، التجربة، الجدول، الحرم، عن الموقع، والتسجيل.">
+                            Every page has a simple role: home, experience, schedule, campus, about, and registration.
+                        </p>
+                    </article>
+
+                    <article class="choose-card">
+                        <strong>02</strong>
+                        <h3 class="t"
+                            data-en="Visual storytelling"
+                            data-fr="Narration visuelle"
+                            data-ar="سرد بصري">
+                            Visual storytelling
+                        </h3>
+                        <p class="t"
+                            data-en="Real images, the video, and the 3D render create a stronger sense of place."
+                            data-fr="Les images, la vidéo et le rendu 3D renforcent le sentiment du lieu."
+                            data-ar="الصور والفيديو والرندر ثلاثي الأبعاد يخلقون إحساسًا أقوى بالمكان.">
+                            Real images, the video, and the 3D render create a stronger sense of place.
+                        </p>
+                    </article>
+
+                    <article class="choose-card">
+                        <strong>03</strong>
+                        <h3 class="t"
+                            data-en="Accessible by design"
+                            data-fr="Accessible par conception"
+                            data-ar="مصمم للإتاحة">
+                            Accessible by design
+                        </h3>
+                        <p class="t"
+                            data-en="Language switching, theme mode, reading tools, and accessibility support make the site more inclusive."
+                            data-fr="Langues, thème, lecture et accessibilité rendent le site plus inclusif."
+                            data-ar="تبديل اللغة والوضع وأدوات القراءة ودعم الإتاحة تجعل الموقع أكثر شمولًا.">
+                            Language switching, theme mode, reading tools, and accessibility support make the site more inclusive.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="home-cta-band">
+            <div class="container">
+                <div class="cta-band-card">
+                    <div>
+                        <span class="eyebrow t"
+                            data-en="Ready for Open Day?"
+                            data-fr="Prêt pour l’Open Day ?"
+                            data-ar="جاهز لليوم المفتوح؟">
+                            Ready for Open Day?
+                        </span>
+
+                        <h2 class="t"
+                            data-en="Save your place and start exploring."
+                            data-fr="Réservez votre place et commencez l’exploration."
+                            data-ar="احجز مكانك وابدأ الاستكشاف.">
+                            Save your place and start exploring.
+                        </h2>
+
+                        <p class="lead t"
+                            data-en="Register now, review the schedule, then explore the 3D campus before you arrive."
+                            data-fr="Inscrivez-vous, consultez le programme, puis explorez le campus 3D avant votre arrivée."
+                            data-ar="سجل الآن، راجع الجدول، ثم استكشف الحرم ثلاثي الأبعاد قبل الوصول.">
+                            Register now, review the schedule, then explore the 3D campus before you arrive.
+                        </p>
+                    </div>
+
+                    <div class="cta-actions">
+                        <a class="btn btn-primary t"
+                            href="pages/register.html"
+                            data-en="Register Now"
+                            data-fr="S’inscrire"
+                            data-ar="سجل الآن">
+                            Register Now
+                        </a>
+
+                        <a class="btn btn-secondary t"
+                            href="pages/schedule.html"
+                            data-en="View Schedule"
+                            data-fr="Voir le programme"
+                            data-ar="عرض الجدول">
+                            View Schedule
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="ufe-footer">
+        <div class="container ufe-footer-inner">
+            <div class="ufe-footer-brand">
+                <a class="ufe-footer-logo" href="index.html" aria-label="UFE Open Day Home">
+                    <img class="ufe-footer-logo-img" src="visuals/UFE_Logo_Blue.png" alt="UFE Logo">
+                    <span class="t"
+                        data-en="Open Day 2026"
+                        data-fr="Open Day 2026"
+                        data-ar="اليوم المفتوح 2026">Open Day 2026</span>
+                </a>
+
+                <p class="ufe-footer-copy t"
+                    data-en="Université Française d’Égypte • Discover, explore, and register with clarity."
+                    data-fr="Université Française d’Égypte • Découvrir, explorer et s’inscrire clairement."
+                    data-ar="الجامعة الفرنسية في مصر • اكتشف، استكشف، وسجل بوضوح.">
+                    Université Française d’Égypte • Discover, explore, and register with clarity.
+                </p>
+            </div>
+
+            <nav class="ufe-footer-links" aria-label="Footer navigation">
+                <a href="index.html" data-i18n="home">Home</a>
+                <a href="pages/majors.html" data-i18n="experience">Experience</a>
+                <a href="pages/schedule.html" data-i18n="schedule">Schedule</a>
+                <a href="pages/campus3d.html" data-i18n="campus">Campus 3D</a>
+                <a href="pages/about.html" data-i18n="about">About</a>
+                <a href="pages/register.html" data-i18n="register">Register</a>
+            </nav>
+
+            <div class="ufe-footer-social">
+                <a class="ufe-instagram-icon"
+                    href="https://www.instagram.com/ufe_fans?igsh=b2RvZDdsczBjNmdx&utm_source=qr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Open UFE Instagram profile">
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                        <rect x="3.5" y="3.5" width="17" height="17" rx="5" stroke="currentColor" stroke-width="1.8"></rect>
+                        <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"></circle>
+                        <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"></circle>
+                    </svg>
+                </a>
+            </div>
+        </div>
+
+        <div class="container ufe-footer-bottom">
+            <span class="t"
+                data-en="© 2026 Université Française d’Égypte"
+                data-fr="© 2026 Université Française d’Égypte"
+                data-ar="© 2026 الجامعة الفرنسية في مصر">
+                © 2026 Université Française d’Égypte
+            </span>
+            <span class="t"
+                data-en="Open Day experience website"
+                data-fr="Site de l’expérience Open Day"
+                data-ar="موقع تجربة اليوم المفتوح">
+                Open Day experience website
+            </span>
+        </div>
+    </footer>
+
+    <div class="access-panel" id="accessPanel">
+        <button id="largeTextBtn" data-i18n="largeText">A+ Large Text</button>
+        <button id="contrastBtn" data-i18n="contrast">High Contrast</button>
+        <button id="motionBtn" data-i18n="motion">Reduce Motion</button>
+        <button id="readPageBtn" data-i18n="read">Read Page Aloud</button>
+        <button id="stopSpeechBtn" data-i18n="stop">Stop Speech</button>
+    </div>
+
+    <div class="chatbot" id="ufeChatbot">
+        <button class="chatbot-launch" aria-label="Open chatbot">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                    d="M4 5.5A3.5 3.5 0 0 1 7.5 2h9A3.5 3.5 0 0 1 20 5.5v7A3.5 3.5 0 0 1 16.5 16H10l-5.2 4.1c-.33.26-.8.02-.8-.4V5.5Z"
+                    stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                <path d="M8 8h8M8 12h5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </button>
+
+        <div class="chatbot-panel">
+            <div class="chatbot-head">
+                <strong class="chatbot-title">UFE Assistant</strong>
+                <button class="chatbot-close" type="button">×</button>
+            </div>
+
+            <div class="chatbot-messages">
+                <div class="bot-msg" data-fixed="hello">Hi! Ask me about Open Day.</div>
+            </div>
+
+            <form class="chatbot-form">
+                <input aria-label="Chat message">
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
