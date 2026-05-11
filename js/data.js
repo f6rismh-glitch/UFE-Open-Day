@@ -1,0 +1,40 @@
+const UFE = {
+  langs:['en','fr','ar'],
+  nav:{
+    en:{home:'Home',about:'About',experience:'Experience',schedule:'Schedule',campus:'Campus 3D',accessibility:'Accessibility',quiz:'Quiz',register:'Register',menu:'More',openDay:'Open Day 2026',themeDark:'Dark mode',themeLight:'Light mode',access:'Accessibility Tools'},
+    fr:{home:'Accueil',about:'À propos',experience:'Expérience',schedule:'Programme',campus:'Campus 3D',accessibility:'Accessibilité',quiz:'Quiz',register:'S’inscrire',menu:'Plus',openDay:'Open Day 2026',themeDark:'Mode sombre',themeLight:'Mode clair',access:'Outils d’accessibilité'},
+    ar:{home:'الرئيسية',about:'عن الموقع',experience:'التجربة',schedule:'الجدول',campus:'الحرم 3D',accessibility:'الإتاحة',quiz:'الاختبار',register:'سجل الآن',menu:'المزيد',openDay:'اليوم المفتوح 2026',themeDark:'الوضع الداكن',themeLight:'الوضع الفاتح',access:'أدوات الإتاحة'}
+  },
+  footer:{
+    en:{tag:'Université Française d’Égypte • Open Day 2026',contact:'Contact',hotline:'Hotline: 17054',email:'Email: info@ufe.edu.eg',instagram:'Instagram: @ufe_egypt',quick:'Quick links'},
+    fr:{tag:'Université Française d’Égypte • Open Day 2026',contact:'Contact',hotline:'Hotline : 17054',email:'Email : info@ufe.edu.eg',instagram:'Instagram : @ufe_egypt',quick:'Liens rapides'},
+    ar:{tag:'الجامعة الفرنسية في مصر • اليوم المفتوح 2026',contact:'التواصل',hotline:'الخط الساخن: 17054',email:'البريد الإلكتروني: info@ufe.edu.eg',instagram:'إنستجرام: @ufe_egypt',quick:'روابط سريعة'}
+  },
+  ui:{
+    en:{largeText:'A+ Large Text',contrast:'High Contrast',motion:'Reduce Motion',read:'Read Page Aloud',stop:'Stop Speech'},
+    fr:{largeText:'A+ Grand texte',contrast:'Contraste élevé',motion:'Réduire le mouvement',read:'Lire la page',stop:'Arrêter'},
+    ar:{largeText:'تكبير النص A+',contrast:'تباين عالٍ',motion:'تقليل الحركة',read:'قراءة الصفحة',stop:'إيقاف القراءة'}
+  },
+  chat:{
+    en:{title:'UFE Open Day Assistant',hello:'Hi! Ask me about registration, accessibility, the schedule, the 3D campus, or the quiz.',placeholder:'Ask about UFE Open Day...',send:'Send',fallback:'I can help with registration, schedule, accessibility, the 3D campus, and the Pathfinder quiz.'},
+    fr:{title:'Assistant Open Day UFE',hello:'Bonjour ! Posez une question sur l’inscription, l’accessibilité, le programme, le campus 3D ou le quiz.',placeholder:'Posez une question sur l’Open Day...',send:'Envoyer',fallback:'Je peux aider avec l’inscription, le programme, l’accessibilité, le campus 3D et le quiz Pathfinder.'},
+    ar:{title:'مساعد اليوم المفتوح في UFE',hello:'مرحبًا! اسألني عن التسجيل أو الإتاحة أو الجدول أو الحرم ثلاثي الأبعاد أو الاختبار.',placeholder:'اسأل عن اليوم المفتوح...',send:'إرسال',fallback:'يمكنني مساعدتك في التسجيل والجدول والإتاحة والحرم ثلاثي الأبعاد واختبار باثفايندر.'}
+  },
+  schedule:[
+    {time:'6:00 PM',en:{title:'Arrival & Welcome Route',desc:'Visitors check in, receive guidance, and begin the Open Day journey.'},fr:{title:'Arrivée et accueil',desc:'Les visiteurs s’enregistrent, reçoivent l’orientation et commencent le parcours.'},ar:{title:'الوصول والاستقبال',desc:'يتم تسجيل الزوار وتوجيههم لبدء رحلة اليوم المفتوح.'}},
+    {time:'6:20 PM',en:{title:'Opening & Guest Speakers',desc:'A short welcome introducing the Open Day vision, guest speakers, and what visitors will experience.'},fr:{title:'Ouverture et intervenants',desc:'Accueil bref présentant la vision, les intervenants et l’expérience du jour.'},ar:{title:'الافتتاح والمتحدثون',desc:'كلمة ترحيبية قصيرة تعرض رؤية اليوم المفتوح والمتحدثين وتجربة الزوار.'}},
+    {time:'6:50 PM',en:{title:'Experience Walk',desc:'A guided stroll through booths, social media challenges, faculty corners, and student activities.'},fr:{title:'Parcours d’expérience',desc:'Une promenade guidée entre stands, défis réseaux sociaux, espaces professeurs et activités.'},ar:{title:'جولة التجربة',desc:'جولة موجهة بين الأركان والتحديات الرقمية وأماكن الأساتذة وأنشطة الطلاب.'}},
+    {time:'7:30 PM',en:{title:'3D Campus Preview',desc:'Visitors explore the future campus digitally through the interactive model.'},fr:{title:'Aperçu campus 3D',desc:'Les visiteurs explorent numériquement le futur campus avec le modèle interactif.'},ar:{title:'معاينة الحرم بتقنية 3D',desc:'يستكشف الزوار الحرم المستقبلي رقميًا من خلال النموذج التفاعلي.'}},
+    {time:'8:00 PM',en:{title:'Personality Quiz & Souvenir',desc:'Students take the Pathfinder quiz and receive a fun souvenir based on their result.'},fr:{title:'Quiz et souvenir',desc:'Les étudiants passent le quiz Pathfinder et reçoivent un souvenir lié au résultat.'},ar:{title:'اختبار الشخصية والتذكار',desc:'يخوض الطلاب اختبار باثفايندر ويحصلون على تذكار مرتبط بالنتيجة.'}},
+    {time:'8:30 PM',en:{title:'Registration Support',desc:'Admissions guides help visitors understand next steps and answer final questions.'},fr:{title:'Aide à l’inscription',desc:'L’équipe admission explique les prochaines étapes et répond aux dernières questions.'},ar:{title:'دعم التسجيل',desc:'يساعد فريق القبول الزوار على فهم الخطوات القادمة والإجابة على الأسئلة النهائية.'}}
+  ],
+  zones:[
+    {id:'academic',cam:[4.2,3.2,5.2],target:[.6,.55,.2],en:{title:'Academic Departments',desc:'Spaces for Engineering, Architecture, Business, Digital Marketing, BIS, Economics/Management, and Applied Languages.'},fr:{title:'Départements académiques',desc:'Espaces pour ingénierie, architecture, business, marketing digital, BIS, économie/gestion et langues.'},ar:{title:'الأقسام الأكاديمية',desc:'مساحات للهندسة والعمارة والأعمال والتسويق الرقمي وBIS والاقتصاد/الإدارة واللغات.'}},
+    {id:'research',cam:[-4,3.1,5],target:[-1.3,.55,.45],en:{title:'Innovation & Research',desc:'A future zone for student projects, labs, prototypes, experiments, and startup-style collaboration.'},fr:{title:'Innovation et recherche',desc:'Zone pour projets étudiants, laboratoires, prototypes, expériences et collaboration.'},ar:{title:'الابتكار والبحث',desc:'منطقة للمشروعات الطلابية والمعامل والنماذج الأولية والتجارب والتعاون.'}},
+    {id:'learning',cam:[1.6,3.2,5.6],target:[-.2,.55,.55],en:{title:'Learning Center',desc:'A digital learning hub for study, research, quiet work, group sessions, and academic support.'},fr:{title:'Centre d’apprentissage',desc:'Hub d’apprentissage numérique pour étude, recherche, travail calme et accompagnement.'},ar:{title:'مركز التعلم',desc:'مركز تعلم رقمي للدراسة والبحث والعمل الهادئ والجلسات الجماعية والدعم الأكاديمي.'}},
+    {id:'auditorium',cam:[-3.8,3.0,-4.8],target:[-1.3,.5,-.7],en:{title:'Auditorium & Events',desc:'A gathering space for Open Day talks, guest speakers, presentations, exhibitions, and student showcases.'},fr:{title:'Auditorium et événements',desc:'Espace pour conférences, intervenants, présentations, expositions et projets étudiants.'},ar:{title:'القاعة والفعاليات',desc:'مساحة لمحاضرات اليوم المفتوح والمتحدثين والعروض والمعارض ومشاريع الطلاب.'}},
+    {id:'studentlife',cam:[2.4,2.6,-4.5],target:[.35,.45,-.55],en:{title:'Student Life Zone',desc:'Social areas for clubs, student support, networking, activities, and Open Day challenge stations.'},fr:{title:'Vie étudiante',desc:'Espaces pour clubs, soutien étudiant, networking, activités et défis Open Day.'},ar:{title:'منطقة الحياة الطلابية',desc:'مساحات للأندية والدعم الطلابي والتواصل والأنشطة ومحطات التحديات.'}},
+    {id:'green',cam:[.2,2.2,-6],target:[0,.25,-1.3],en:{title:'Green Campus Areas',desc:'Shaded outdoor walkways, gardens, climate-responsive landscape, and calm spaces between buildings.'},fr:{title:'Espaces verts',desc:'Allées ombragées, jardins, paysage climatique et espaces calmes entre bâtiments.'},ar:{title:'المناطق الخضراء',desc:'ممرات مظللة وحدائق وتصميم مناخي ومساحات هادئة بين المباني.'}},
+    {id:'sports',cam:[4.5,2.7,-3.8],target:[1.7,.3,-.9],en:{title:'Sports & Recreation',desc:'Wellness, recreation, outdoor activity areas, and student balance beyond the classroom.'},fr:{title:'Sport et loisirs',desc:'Bien-être, loisirs, espaces extérieurs et équilibre étudiant au-delà des cours.'},ar:{title:'الرياضة والترفيه',desc:'مناطق للرفاهية والترفيه والأنشطة الخارجية وتوازن الحياة الطلابية.'}}
+  ]
+};
